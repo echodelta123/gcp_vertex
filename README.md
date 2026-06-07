@@ -11,7 +11,6 @@ Datasources:
 Kaggle H&M dataset: https://www.kaggle.com/competitions/h-and-m-personalized-fashion-recommendations
 Kaggle Instacart dataset: https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis.
 
----
 
 ## Demos
 
@@ -45,11 +44,11 @@ Service Layer           \
       v         v            v
 AI / ML Layer   BigQuery     Storage Layer
 +-----------------------------+   +------------------------------+
-| Google Gemini               |   | LanceDB (vector)             |
-| Mock fallback (DEMO_MODE)   |   | Weaviate (vector)            |
+| Google Gemini               |   | Weaviate (vector)            |
+| Mock fallback (DEMO_MODE)   |   | LanceDB (vector)             |
 +-----------------------------+   | Neo4j (graph)                |
-                                   | BigQuery (analytics)         |
-                                   +------------------------------+
+                                  | BigQuery (analytics)         |
+                                  +------------------------------+
 
 ## Tech Stack
 | Layer | Technologies |
