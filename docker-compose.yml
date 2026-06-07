@@ -1,0 +1,108 @@
+services:
+  # ─── Demo 1: Sentiment Intelligence Engine ───
+  sentiment-api:
+    build: .
+    command: uvicorn demo_sentiment_categoriser.backend:app --host 0.0.0.0 --port 8001
+    ports:
+      - "8001:8001"
+    env_file:
+      - .env
+    environment:
+      - DEMO_MODE=${DEMO_MODE:-true}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8001/api/v1/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  sentiment-ui:
+    build: .
+    command: streamlit run demo_sentiment_categoriser/frontend.py --server.port 8501 --server.address 0.0.0.0
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    depends_on:
+      sentiment-api:
+        condition: service_healthy
+
+  # ─── Demo 2: Semantic Recommendation Engine ───
+  recommender-api:
+    build: .
+    command: uvicorn demo_recommendation_engine.backend:app --host 0.0.0.0 --port 8002
+    ports:
+      - "8002:8002"
+    env_file:
+      - .env
+    environment:
+      - DEMO_MODE=${DEMO_MODE:-true}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8002/api/v1/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  recommender-ui:
+    build: .
+    command: streamlit run demo_recommendation_engine/frontend.py --server.port 8502 --server.address 0.0.0.0
+    ports:
+      - "8502:8502"
+    env_file:
+      - .env
+    depends_on:
+      recommender-api:
+        condition: service_healthy
+
+  # ─── Demo 3: Customer 360 Intelligence ───
+  customer360-api:
+    build: .
+    command: uvicorn demo_customer_support_360.backend:app --host 0.0.0.0 --port 8003
+    ports:
+      - "8003:8003"
+    env_file:
+      - .env
+    environment:
+      - DEMO_MODE=${DEMO_MODE:-true}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8003/api/v1/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  customer360-ui:
+    build: .
+    command: streamlit run demo_customer_support_360/frontend.py --server.port 8503 --server.address 0.0.0.0
+    ports:
+      - "8503:8503"
+    env_file:
+      - .env
+    depends_on:
+      customer360-api:
+        condition: service_healthy
+
+  # ─── Demo 4: Knowledge Graph Explorer ───
+  graph-api:
+    build: .
+    command: uvicorn demo_instacart_knowledge_graph.backend:app --host 0.0.0.0 --port 8004
+    ports:
+      - "8004:8004"
+    env_file:
+      - .env
+    environment:
+      - DEMO_MODE=${DEMO_MODE:-true}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8004/api/v1/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  graph-ui:
+    build: .
+    command: streamlit run demo_instacart_knowledge_graph/frontend.py --server.port 8504 --server.address 0.0.0.0
+    ports:
+      - "8504:8504"
+    env_file:
+      - .env
+    depends_on:
+      graph-api:
+        condition: service_healthy

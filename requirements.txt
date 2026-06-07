@@ -1,0 +1,32 @@
+# ─── Core Framework ───
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.5.0
+python-dotenv>=1.0.0
+
+# ─── AI / LLM ───
+google-generativeai>=0.8.0          # Gemini API (free tier)
+lancedb>=0.4.0                      # Local vector store (Demos 2 & 3)
+weaviate-client>=3.24.0,<4.0.0       # Weaviate client v3 for vector store
+pyarrow>=14.0.0                     # Columnar memory layout for LanceDB
+
+# ─── Graph DB (Demo 4) ───
+neo4j>=5.14.0                       # Neo4j driver (Aura Free)
+
+# ─── Data Generation ───
+pandas>=2.1.0
+faker>=20.0.0
+numpy>=1.26.0
+
+# ─── Frontend / Visualization ───
+streamlit>=1.29.0
+plotly>=5.18.0
+pyvis>=0.3.2                        # Interactive graph viz (Demo 4)
+
+# ─── Testing ───
+pytest>=7.4.0
+httpx>=0.25.0                       # Async test client for FastAPI
+pytest-asyncio>=0.23.0
+
+# ─── Utilities ───
+python-multipart>=0.0.6             # File upload support

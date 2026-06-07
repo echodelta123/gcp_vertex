@@ -1,0 +1,19 @@
+{
+  "test_metrics": {
+    "mrr": 0.08074165603743678,
+    "hit_rate@10": 0.18933333333333333,
+    "ndcg@10": 0.09042213821758409,
+    "hit_rate@50": 0.5283333333333333,
+    "ndcg@50": 0.16377338458449267,
+    "hit_rate@100": 0.739,
+    "ndcg@100": 0.19786897957975638
+  },
+  "training_time_seconds": 18.79865789413452,
+  "epochs": 5,
+  "model_size_bytes": 474148,
+  "quantized_size_bytes": 274588,
+  "size_reduction_pct": 42.1,
+  "num_users": 500,
+  "num_items": 200,
+  "num_train_interactions": 14000
+}

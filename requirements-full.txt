@@ -1,0 +1,11 @@
+# ─── Everything in requirements.txt, plus enterprise/cloud dependencies ───
+-r requirements.txt
+
+# ─── Vertex AI SDK (enterprise auth, IAM, managed services) ───
+google-cloud-aiplatform>=1.38.0
+
+# ─── Custom Embeddings (production-grade semantic search) ───
+sentence-transformers>=2.2.0
+
+# ─── Code Quality ───
+ruff>=0.1.0

@@ -1,0 +1,47 @@
+openapi: 3.0.1
+info:
+  title: Customer 360 MuleSoft Stub
+  version: "1.0"
+paths:
+  /mulesoft/persona:
+    post:
+      summary: Get a synthesized persona for a given customer
+      operationId: getPersona
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MuleRequest'
+      responses:
+        '200':
+          description: Successful synthesis
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MuleResponse'
+components:
+  schemas:
+    MuleRequest:
+      type: object
+      properties:
+        customer_id:
+          type: string
+          example: CUST-1001
+        include_history:
+          type: boolean
+          default: true
+        language:
+          type: string
+          default: en
+    MuleResponse:
+      type: object
+      properties:
+        persona_summary:
+          type: string
+        churn_risk:
+          type: string
+        next_best_action:
+          type: array
+          items:
+            type: string

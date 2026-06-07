@@ -1,0 +1,38 @@
+# Dependencies
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environment
+.env
+.venv/
+venv/
+env/
+
+# ChromaDB local storage
+.chromadb/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data artifacts
+*.sqlite
+*.db
+
+# Test / coverage
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Archive (old scaffolding)
+_archive/
