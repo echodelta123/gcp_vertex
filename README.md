@@ -19,12 +19,12 @@ The demos cover sentiment analysis, vector search, retrieval-augmented generatio
 
 | # | Demo                            | Problem                                                        | Stack                                                  | Interface                   |
 | - | ------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------ | --------------------------- |
-| 1 | Sentiment Categoriser           | Analyse H&M clothing reviews at scale with aspect-level detail | Gemini structured output, PyTorch batch processing     | FastAPI + Streamlit `:8501` |
-| 2 | Recommendation Engine           | Personalised fashion recommendations with explanations         | LanceDB vector search, Gemini, PyTorch two-tower model | FastAPI + Streamlit `:8502` |
-| 3 | Customer Support 360 RAG        | Turn support logs into structured personas                     | RAG (Weaviate + Gemini)                                | FastAPI + Streamlit `:8503` |
-| 4 | Instacart Knowledge Graph       | Natural language queries over basket relationships             | NL→Cypher (Gemini), Neo4j, pyvis                       | FastAPI + Streamlit `:8504` |
-| 5 | Data Ingestion Pipeline         | Ingest events into BigQuery and transform with dbt             | Dagster, dbt, BigQuery, Dataflow                       | Dagster UI `:3000`          |
-| 6 | ML Pipeline – Demand Prediction | Demand forecasting and segmentation                            | BigQuery ML, XGBoost, ARIMA+, Vertex AI endpoints      | Dagster UI `:3001`          |
+| 1 | [**Sentiment Categoriser**](./demo_sentiment_categoriser/README.md) | Analyse H&M clothing reviews at scale with aspect-level detail | Gemini structured output, PyTorch batch processing     | FastAPI + Streamlit `:8501` |
+| 2 | [**Recommendation Engine**](./demo_recommendation_engine/README.md) | Personalised fashion recommendations with explanations         | LanceDB vector search, Gemini, PyTorch two-tower model | FastAPI + Streamlit `:8502` |
+| 3 | [**Customer Support 360 RAG**](./demo_customer_support_360/README.md) | Turn support logs into structured personas                     | RAG (Weaviate + Gemini)                                | FastAPI + Streamlit `:8503` |
+| 4 | [**Instacart Knowledge Graph**](./demo_instacart_knowledge_graph/README.md) | Natural language queries over basket relationships             | NL→Cypher (Gemini), Neo4j, pyvis                       | FastAPI + Streamlit `:8504` |
+| 5 | [**Data Ingestion Pipeline**](./demo_data_ingestion_dagster_dbt/README.md) | Ingest events into BigQuery and transform with dbt             | Dagster, dbt, BigQuery, Dataflow                       | Dagster UI `:3000`          |
+| 6 |[**ML Pipeline - Predict Demand**](./demo_predict_demand/README.md) | Demand forecasting and segmentation                            | BigQuery ML, XGBoost, ARIMA+, Vertex AI endpoints      | Dagster UI `:3001`          |
 
 ---
 
